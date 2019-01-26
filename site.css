@@ -1,0 +1,824 @@
+body {
+	margin:0;
+	font-family: 'Roboto', monospace;
+	background-color:#D2D7D3;	
+	background: linear-gradient(to right, #013243, rgba(255,0,0,0) 450%, rgba(255,0,0,0));
+    background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;	
+	color: #e6ecff;
+}
+
+.background {
+	background: url(https://i.imgur.com/Qmwqmxw.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+	opacity: 0.4;
+	overflow: hidden;
+	animation: zoom-out 5s cubic-bezier(0, .5, 0, 1) forwards;
+}
+
+@keyframes zoom-out {
+	0% {
+		opacity: 0;
+		transform: scale(1.2);
+	}
+	100%{
+		opacity: 0.4;
+		transform: scale(1);
+	}
+}
+
+#left {
+	position:fixed;
+	width:15vw;
+	left:0;
+	height:100%;
+	z-index:1;
+}
+
+#content {
+	height: 100%;
+	line-height: 1.4;
+	font-size: 1em;
+}
+
+#content .row {
+	height: 100%;
+}
+
+#data {
+	max-width:640px;
+	margin:auto;
+	padding-top:10px;
+	font-size:18px;
+}
+
+#data p {
+	text-align:justify;
+}
+
+h1, h2 {
+	font-family: 'Roboto Condensed', sans-serif;
+	margin-bottom: 50px;
+	text-align: center;
+	font-size: 2.5em;
+	text-transform: uppercase;
+}
+
+.menuItem {
+	font-size: 1em;
+	padding: 2px 0;
+	font-family: 'Roboto', sans-serif;
+	flex: 1 1 auto;
+	display: inline-block;
+}
+
+.menuItem:hover {
+	cursor:pointer;
+	-webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.menu {
+	font-weight:bold;
+	margin-left: 10px;
+	text-transform: uppercase;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+#social {
+	font-size:1.2em;
+	position: fixed;
+    bottom: 0;
+    left: 0;
+	margin-left: 20px;
+}
+
+.box {
+	position: fixed;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 3;
+}
+
+body .container-fluid {
+	height: 100vh !important;
+}
+
+i {
+	padding: 0 4px;
+}
+
+#social .fa, #social .ai, #contact .fa, #contact .ai {
+	-webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+#social .fa:hover, #social .ai:hover {
+	color:#f1c40f;
+}
+
+.ai-researchgate {
+    font-size: 1.2em;
+}
+
+.ai-google-scholar {
+	margin-left: -5px;
+}
+
+a {
+	color:#e6ecff;
+	text-decoration: none;
+}
+
+a:hover, a:focus {
+	text-decoration: none !important;
+	color: white;
+	/* color: gold; */
+}
+
+#aboutMe, #cv, #teaching, #contact {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#blockOfText div {
+	text-indent: 20px;
+}
+
+#blockOfText {
+	position: relative;
+}
+
+.w3-card-12 {
+	cursor: pointer;
+}
+
+.naslov {
+	padding-top: 5px;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: gold;
+}
+
+.opis {
+	font-size: 1.5em;
+}
+
+.fa-file-text-o {
+	position: absolute;
+	transform: translateX(50%);
+	bottom: 25px;
+	right: 50%;
+	padding: 15px;
+	color: white;
+	border: 5px solid white;
+	border-radius: 100%;
+	opacity: 0;
+}
+
+.fa-download {
+	position: absolute;
+	bottom: 5%;
+	right: 5%;
+	padding: 15px;
+	color: gold;
+	border: 3px solid gold;
+	border-radius: 100%;
+	opacity: 0;
+	z-index: 1;
+	transition: 0.3s;
+}
+
+img {
+	margin: 5px;
+	width: 100%;
+	padding-right: 10px;
+}
+
+img.ajax-loader {
+	width: 20px;
+}
+
+.kartica {
+	position: relative;
+	top: 40px;
+	margin: auto;
+	margin-bottom: 10px;
+	outline: 3px solid #e6ecff;
+	cursor: pointer;
+	transition: all 0.3s !important;
+	background: transparent;
+	overflow: hidden;
+	opacity: 0;
+	margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#content .kartica:hover {
+	outline-color: gold;
+}
+
+#content .kartica:hover .opis {
+	color: gold;
+}
+
+.opensModal .kartica:hover .ikonica {
+	opacity: 1;
+}
+
+.opensModal .kartica:hover .tekstKartice {
+	background-color: rgba(0,0,0,0.6) !important;
+}
+
+#contact .kartica:hover .opis {
+	/* color: gold; */
+}
+
+.kartica i {
+	font-size: 1.3em;
+}
+
+.tekstKartice {
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	width: 80%;
+	max-height: 100%;
+	font-weight: bold;
+	transition: all 0.3s;
+}
+
+.kartica img {
+	margin: 0;
+	padding: 0;
+	/* transition: all 0.3s; */
+}
+
+#teaching .kartica, #research .kartica, #cv .kartica, #contact .kartica {
+	font-size: 0.8em;
+}
+
+#research h1 {
+	margin-bottom: 10px;
+}
+
+h2 {
+	margin-top: 0;
+}
+
+#contact h2 {
+	margin-top: 0px;
+	margin-bottom: 60px;
+}
+
+#contactHint {
+	font-size: 1.5em;
+	font-family: 'Roboto Condensed', sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#media .opis, #maps .opis, #interactiveMaps .opis {
+	font-size: 1.1em;
+}
+
+#media .opis, #maps .opis, #cv .opis, #research .opis, #teaching .opis, #interactiveMaps .opis {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	text-shadow: 0px 0px 4px black;
+}
+
+#media .tekstKartice, #maps .tekstKartice, #cv .tekstKartice, #research .tekstKartice, #teaching .tekstKartice, #interactiveMaps .tekstKartice {
+	width: 100%;
+	height: 100%;
+	padding: 0 10px;
+	background-color: rgba(0,0,0,0.4);
+}
+
+#maps .kartica, #interactiveMaps .kartica {
+	height: 280px;
+}
+
+#maps img, #interactiveMaps img {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.ikonica {
+	position: absolute;
+	bottom: 5%;
+	left: 3%;
+	opacity: 0;
+	font-size: 1.3em;
+	color: gold;
+	transition: all 0.3s;
+	text-shadow: 0px 0px 4px black;
+	z-index: 1;
+}
+
+#cv .ikonica, #research .ikonica, #teaching .ikonica {
+	font-size: 1.6em;
+	bottom: 10px;
+	left: 10px;
+}
+
+#contact .kartica{
+	outline: none;
+	border-radius: 50%;
+	box-shadow: 0 0 0 2pt white;
+	width: 90px;
+	height: 90px;
+}
+
+#contact .kartica:hover {
+	box-shadow: 0 0 0 2pt gold;
+	outline: none;
+}
+
+#contact .row-one {
+	font-size: 1.5em;
+}
+
+#contact .row-two {
+	font-size: 1.8em;
+}
+
+#contact .row-three {
+	font-size: 1.9em;
+}
+
+.hamburger {
+    cursor: pointer;
+    float: right;
+	margin: 10px 10px 20px 20px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	display: none;
+	z-index: 5;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 80px;
+    height: 10px;
+    background-color: #333;
+    margin: 12px 0;
+    transition: 0.3s;
+	background-color: white;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-16px, 15px);
+    transform: rotate(-45deg) translate(-16px, 15px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-16px, -15px);
+    transform: rotate(45deg) translate(-16px, -15px);
+}
+
+#media, #maps, #research, #interactiveMaps {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.bottomLine {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	z-index: 1;
+	text-align: center;
+	line-height: 40px;
+	background-color: rgba(0, 0, 0, .5);
+}
+
+.menuItem::before {
+	content: "";
+	margin-top: -2px;
+	display: block;
+	background: gold;
+	width: 0px;
+	height: 22px;
+	position: absolute;
+	left: -8px;
+	transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	z-index: -1;
+}
+
+.menuItem:hover::before {
+	width: 5px;
+}
+
+.menuItem.clicked {
+	color: black;
+}
+
+.menuItem.clicked::before {
+	width: calc(100% + 15px);
+	margin-top: -2px;
+}
+
+.copyright {
+	font-size: 0.9em;	
+}
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+	margin:auto;
+    width: auto;
+    height: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+/* Modal Content */
+.modalContent {
+    position: relative;
+	top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.8);
+    margin: auto;
+    padding: 0;
+    width: 800px;
+	height: 450px;
+}
+
+.controls span:hover,
+.controls span:focus,
+.controls a:hover,
+.controls a:focus {
+    text-decoration: none;
+    cursor: pointer;
+	color: gold;
+}
+
+.controls {
+	display: inline-block;
+	float: right;
+	background-color: rgba(0,0,0,0.8);
+}
+
+.controls span, .controls a {
+	display: inline-block;
+	color: white;
+    font-size: 1.5em;
+    padding: 0 7px 5px 7px;
+	transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+}
+
+#close {
+	margin-right: 10px;
+}
+
+#fullscreen {
+	margin-left: 10px;
+}
+
+.modal-body {
+	position:relative;
+	top:0;
+	left:0;
+	height: 100%;
+}
+
+.modal-body img {
+	height: 420px;
+	width: 435px;
+	margin: 0;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+/* body.modal-open { */
+    /* overflow: hidden; */
+/* } */
+
+.modalHeader {
+    padding: 2px 16px;
+    background-color: transparent;
+    color: white;
+}
+
+iframe {
+	width:100%;
+	height:100%;
+	border: none;
+}
+
+#modal {
+	height:100vh;
+	width: 100vw;
+	background-color: rgba(0,0,0,0.6);
+	position:fixed;
+	left:0;
+	top:0;
+	display:none;
+	z-index: 10000;
+}
+
+.maps-heading {
+	margin-top: 50px;
+}
+
+@media only screen and (max-device-width: 768px) {
+    .box {
+		top: -5px;
+		left: -100%;
+		transform: none;
+		font-size: 3em;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		background-color: rgba(0, 0, 0, 0.75);
+		z-index: 100;
+		transition: all 0.3s;
+	}
+	
+	.open {
+		left: 0;
+	}
+	
+	.open .hamburger {
+		right: 10px;
+	}
+	
+	.hamburger {
+		display: inline-block;
+		right: -120px;
+	}
+	
+	.menu {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 100%;
+		margin-left: 0;
+		align-items: center;
+	}
+	
+	.menuItem {
+		font-size: 1.4em;
+		padding: 10px 0;
+		width: 100%;
+	}
+	
+	.menuItem::before {
+		height: 100px;
+	}
+	
+	.menuItem.clicked::before {
+		width: 100%;
+		height: 100px;
+		transform: translateY(-10px);
+	}
+	
+	#social {
+		font-size: 2em;
+		width: 100%;
+		text-align: center;
+		margin: 0 0 35px 0;
+		padding: 20px 0;
+		z-index: 2;
+	}
+	
+	#social a {
+		margin: 0 15px;
+	}
+	
+	#blockOfText{
+		font-size: 2em;
+	}
+	
+	#media .opis, #maps .opis, #interactiveMaps .opis {
+		font-size: 0.8em;
+	}
+	
+	#contact .opis {
+		font-size: 2.5em;
+	}
+	
+	.kartica {
+		outline-width: 5px;
+	}
+	
+	#cv .kartica, #research .kartica, #teaching .kartica {
+		height: 450px;
+		margin: 20px 0;
+	}
+	
+	#media .kartica {
+		height: 450px;
+		font-size: 2.8em;
+		margin: 20px 0;
+	}
+	
+	#maps .kartica, #interactiveMaps .kartica {
+		height: 800px;
+		font-size: 2.8em;
+		margin: 20px 0;
+	}
+	
+	#media h2, #maps h2, #teaching h2, #interactiveMaps h2 {
+		margin-top: 100px;
+	}
+	
+	.maps-heading {
+		margin-bottom: 100px;
+	}
+	
+	#research {
+		top: 0;
+		transform: none;
+		margin-top: 140px;
+	}
+	
+	h1, h2 {
+		font-size: 3.5em;
+	}
+	
+	.topLine
+	{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 120px;
+		background-color: rgba(0, 0, 0, .5);
+		z-index: 1;
+	}
+	
+	.bottomLine {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 130px;
+		background-color: rgba(0, 0, 0, .5);
+		z-index: 1;
+		font-size: 2em;
+	}
+	
+	.copyright {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;
+		margin-bottom: 5px;
+	}
+	
+	#contact .kartica {
+		width: 200px;
+		height: 200px;
+		box-shadow: 0 0 0 4pt white;
+	}
+	
+	#contact .row-one {
+		margin-bottom: 70px;
+	}
+
+	#contact .row-two {
+		margin-bottom: 70px;
+	}
+	
+	#content {
+		font-size: 1.5em;
+	}
+	
+	.opis {
+		font-size: 2.5em;
+	}
+	
+	.contactClicked {
+		height: 50px !important;
+	}
+	
+	#media, #maps, #research, #interactiveMaps {
+		margin-bottom: 160px;
+	}
+	
+	.controls {
+		font-size: 3em;
+	}
+	
+	.modalContent {
+		margin: 0;
+		width: 100%;
+		height: 600px;
+	}
+}
+
+@media only screen and (max-device-width: 1024px) {
+	body {
+		background: linear-gradient(to right, #013243, rgba(255,0,0,0) 450%, rgba(255,0,0,0));
+		background-size: cover;
+		background-repeat: no-repeat;	
+		background-position: top left;
+		background-attachment: fixed;
+	}
+	
+	.background {
+		background: url(https://i.imgur.com/u1uCmfw.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;	
+		background-position: top left;
+		background-attachment: fixed;
+	}
+}
+
+@media screen and (max-device-width: 768px) and (orientation:landscape) { 
+	body {
+		font-size: 0.8em;
+	}
+	
+	.topLine {
+		display: none;
+	}
+	
+	.bottomLine {
+		display: none;
+	}
+	
+	#cv, #teaching, #contact {
+		position: static;
+		top: 0;
+		transform: none;
+	}
+	
+	#cv, #research, #teaching, #media, #contact {
+		margin-top: 40px;
+	}
+	
+	#media h2, #maps h2, #interactiveMaps h2 {
+		margin-top: 0;
+	}
+	
+	.menu .clicked::before {
+		height: 65px;
+	}
+	
+	#contact .kartica {
+		width: 150px;
+		height: 150px;
+		font-size: 1em;
+	}
+	
+	.modalContent {
+		margin: auto;
+		width: 800px;
+		height: 450px;
+	}
+	
+	.controls {
+		font-size: 3em;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
