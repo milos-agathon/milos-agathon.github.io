@@ -16,19 +16,23 @@ $(document).ready(function(){
 			
 			$("#fullscreen").attr("href", url);
 			
-			if (url.indexOf("youtube") > -1){
-				url = url.replace('watch?v=', 'embed/');
-			}
+			// if (url.indexOf("youtube") > -1){
+				// url = url.replace('watch?v=', 'embed/');
+			// }
 			
-			if (url.indexOf("maps") > -1 && url.indexOf("interactive") < 0){
-				$(".modal-body img").attr("src", url);
-				url = url.replace("maps/", "maps/full/").replace(".jpg", ".png");
-				$(".modal-body img").css("display", "block");
-				$("iframe").css("display", "none");
-				$("#fullscreen").attr("href", url);
-			} else {
-				$(".modal-body iframe").attr("src", url);
-			}
+			url = url.replace('watch?v=', 'embed/');
+			
+			$(".modal-body iframe").attr("src", url);
+			
+			// if (url.indexOf("maps") > -1 && url.indexOf("interactive") < 0){
+				// $(".modal-body img").attr("src", url);
+				// url = url.replace("maps/", "maps/full/").replace(".jpg", ".png");
+				// $(".modal-body img").css("display", "block");
+				// $("iframe").css("display", "none");
+				// $("#fullscreen").attr("href", url);
+			// } else {
+				// $(".modal-body iframe").attr("src", url);
+			// }
 				
 			modal.css("display", "block");
 			TweenLite.from(modal, .25, {opacity:0, y:"+=40px", delay:.15});
