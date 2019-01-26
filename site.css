@@ -650,7 +650,7 @@ iframe {
 	}
 	
 	#maps .kartica, #interactiveMaps .kartica {
-		height: 800px;
+		height: 400px;
 		font-size: 2.8em;
 		margin: 20px 0;
 	}
