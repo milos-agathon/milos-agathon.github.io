@@ -1,0 +1,30 @@
+text { font-family:"Georgia"; }
+
+h4 { padding-top:0; border-bottom:1px solid white; }
+
+.tipspanstyle {
+  font-size:14px;
+  font-weight:700;
+  clear:right;
+  padding-bottom:10px;
+}
+
+.tipchart { text-align:left; }
+
+.tiprow { vertical-align:middle; }
+
+.tipbar {
+  background-color:#dd7c8a;
+  font:12px sans-serif;
+  text-align:left;
+  padding:3px;
+  margin:1px;
+  line-height:11px;
+  color:white;
+}
+
+.tipbarticks {
+  font: 12px sans-serif;
+  text-align:right;
+  padding-right:3px;
+}
