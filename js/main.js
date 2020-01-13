@@ -109,12 +109,14 @@ function toggleContent(){
 	
 	//prebacuje active i radi load html-a
 	active.removeClass("active");
-	
-	$("#content").load($clicked.attr("data-item").substr(1) + ".html", function(){
+
+	var pageToLoad = $clicked.attr("data-item").substr(1) + ".html";
+
+	$("#content").load(pageToLoad, function(){
 		active = $($clicked.attr('data-item'));
 		active.addClass("active");
 		// active.closest(".row").toggle();
-		TweenLite.from($("h2"), .25, {opacity:0, y:"+=40px", delay:.15});
+		// TweenLite.from($("h2"), .25, {opacity:0, y:"+=40px", delay:.15});
 		
 		//otkriva social
 		if (!($("#contact").hasClass("active")))
@@ -123,18 +125,27 @@ function toggleContent(){
 			$(".bottomLine").removeClass("contactClicked");
 		}
 		
-		//proverava da li je kliknut about me, jer on nema kartice
-		if ($clicked.data("item") === '#aboutMe')
+		//proverava da li je kliknut about me (nema kartice, pa se animira samo tekst)
+		var clickedItem = $clicked.data("item");
+
+		if (clickedItem === '#aboutMe')
 		{
+			TweenLite.from($("h2"), .25, {opacity:0, y:"+=40px", delay:.15});
 			var tekst = active.find("#blockOfText");
 			TweenLite.from(tekst, .25, {opacity:0, y:"+=40px", delay:.15});
 			
 			return;
 		}
-		
-		kartice = active.find(".kartica");
-		
-		TweenMax.staggerTo(kartice, .25, {opacity:1, y:"-=40px"}, .15);
+
+		if (clickedItem === '#blog')
+		{
+			kartice = active.find(".blogPost");
+			TweenMax.staggerTo(kartice, 0.4, {opacity:1, y:"-=40px"}, .15);
+		} else {
+			TweenLite.from($("h2"), .25, {opacity:0, y:"+=40px", delay:.15});
+			kartice = active.find(".kartica");
+			TweenMax.staggerTo(kartice, .25, {opacity:1, y:"-=40px"}, .15);
+		}
 	});
 }
 

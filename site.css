@@ -75,6 +75,39 @@ h1, h2 {
 	text-transform: uppercase;
 }
 
+.blogPost {
+	background: rgba(0,0,0,0.4);
+	padding: 40px;
+	margin-bottom: 15px;
+}
+
+.blogPost h2 {
+	margin-bottom: 0px;
+}
+
+.blogAuthor {
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 50px;
+	border-bottom: 1px solid gold;
+	padding-bottom: 15px;
+	width: 50%;
+	margin-left: 25%;
+	font-style: italic;
+}
+
+.blogPost a {
+	color: gold;
+	border-bottom: 1px solid gold;
+	transition: 0.4s all;
+}
+
+.blogPost a:hover {
+	color: black;
+	background: gold;
+	border-bottom: none;
+}
+
 .menuItem {
 	font-size: 1em;
 	padding: 2px 0;
@@ -153,6 +186,13 @@ a:hover, a:focus {
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+#aboutMe {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1.1em;
+	background: rgba(0,0,0,0.4);
+	padding: 40px;
 }
 
 #blockOfText div {
@@ -244,10 +284,6 @@ img.ajax-loader {
 	background-color: rgba(0,0,0,0.6) !important;
 }
 
-#contact .kartica:hover .opis {
-	/* color: gold; */
-}
-
 .kartica i {
 	font-size: 1.3em;
 }
@@ -271,7 +307,6 @@ img.ajax-loader {
 .kartica img {
 	margin: 0;
 	padding: 0;
-	/* transition: all 0.3s; */
 }
 
 #teaching .kartica, #research .kartica, #cv .kartica, #contact .kartica {
@@ -394,7 +429,9 @@ h2 {
     transform: rotate(-45deg) translate(-16px, 15px);
 }
 
-.change .bar2 {opacity: 0;}
+.change .bar2 {
+	opacity: 0;
+}
 
 .change .bar3 {
     -webkit-transform: rotate(45deg) translate(-16px, -15px);
@@ -526,10 +563,6 @@ h2 {
 	transform: translateX(-50%);
 }
 
-/* body.modal-open { */
-    /* overflow: hidden; */
-/* } */
-
 .modalHeader {
     padding: 2px 16px;
     background-color: transparent;
@@ -557,7 +590,64 @@ iframe {
 	margin-top: 50px;
 }
 
+#blog {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.blogText {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1.1em;
+}
+
+.imageWithCaption {
+	margin: 20px 0;
+	background: rgba(0,0,0,0.4);
+}
+
+.imageWithCaption img {
+	margin-bottom: 0px;
+}
+
+.imageCaption {
+	text-align: center;
+	font-style: italic;
+	margin-top: 5px;
+	padding-bottom: 5px;
+}
+
+.comingSoon {
+	margin-top: 50%;
+	background: rgba(0,0,0,0.4);
+	font-style: italic;
+	padding: 30px;
+}
+
+.comingSoon h2 {
+	margin-bottom: 0;
+}
+
 @media only screen and (max-device-width: 768px) {
+	#blog {
+		margin-top: 200px;
+		margin-bottom: 100px;
+	}
+
+	#blog a {
+		border-bottom: 2px solid gold;
+	}
+
+	.blogText {
+		font-size: 2.2em;
+	}
+
+	.blogAuthor {
+		font-size: 2em;
+		border-bottom: 2px solid gold;
+		width: 75%;
+		margin-left: 12.5%;
+	}
+
     .box {
 		top: -5px;
 		left: -100%;
@@ -660,7 +750,7 @@ iframe {
 	}
 	
 	#aboutMe {
-		margin-top: 90px;
+		margin-top: 150px;
 		margin-bottom: 140px;
 	}
 	
