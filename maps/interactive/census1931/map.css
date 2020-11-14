@@ -1,0 +1,128 @@
+body {
+  font-family: "Montserrat";
+  margin-top: -3rem;
+}
+
+.container {
+  width: 80% !important;
+}
+
+hr {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.county-border {
+  fill: none;
+  stroke: white;
+  stroke-width: 0.25px;
+  pointer-events: all;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.background {
+  fill: white;
+}
+
+path:hover {
+  cursor: pointer;
+  fill: #46a10d !important;
+  stroke: #46a10d;
+  transition: stroke 0.2s ease-in-out, fill 0.2s ease-in-out;
+}
+
+path.highlightedPath {
+  fill: #46a10d !important;
+}
+
+.tooltip {
+  border-radius: 5px;
+  background: rgba(51, 51, 51, 0.75);
+  opacity: 1;
+  color: white;
+  padding: 1rem 2rem !important;
+  font-size: 1.75vmin;
+  font-family: "Montserrat";
+  transition: all 0.2s ease-in-out;
+}
+
+.scaling-svg-container {
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding: 0;
+}
+
+.scaling-svg {
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+#dimensions {
+  margin-bottom: 1em;
+}
+
+#title {
+  text-align: center;
+}
+
+@media only screen and (max-width: 1024px) {
+  #canvas {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  #textDescription,
+  #source,
+  .authors {
+    margin-bottom: 1em;
+  }
+
+  .svg {
+    width: 100%;
+  }
+
+  .searchContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .searchContainer > div {
+    width: 100%;
+    margin: 0 1em;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .container {
+    margin: 0;
+    padding: 0 1em;
+    width: 100% !important;
+  }
+
+  .searchContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .searchContainer > div {
+    width: 100%;
+    margin: 0;
+  }
+
+  .svg {
+    padding: 0;
+    margin: 2em 0;
+  }
+}
